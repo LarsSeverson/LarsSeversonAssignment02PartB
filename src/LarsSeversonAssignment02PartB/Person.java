@@ -22,6 +22,8 @@ public sealed abstract class Person implements Greeting permits GeneralManager, 
     //
     private String firstName;
     private String lastName;
+    private String theirEmail;
+    private String theirHeader;
 
     private String theirLanguage;
     //
@@ -53,6 +55,25 @@ public sealed abstract class Person implements Greeting permits GeneralManager, 
     }
     public String getTheirLanguage() {
         return theirLanguage;
+    }
+    public String getTheirHeader (){
+        return this.theirHeader;
+    }
+    //
+    // Additional Methods
+    //
+    public abstract String getGreetings(int i);
+    // Player exclusive
+    public void displayPlayerInfo(){
+
+    }
+    // Student exclusive, but could also implement abstract because everyone has an email?
+    public void setEmail(String theirEmail){
+        this.theirEmail = theirEmail;
+    }
+    // If a person needs a header for the program here's where they'll define it
+    public void setPersonHeader(String theirHeader){
+        this.theirHeader = theirHeader;
     }
     //
     // Language

@@ -19,9 +19,9 @@ public final class FrontOffice {
     //
     // Instance Data Fields
     //
-    private President thePresident;
-    private GeneralManager theGeneralManager;
-    private Manager theManager;
+    private Person thePresident;
+    private Person theGeneralManager;
+    private Person theManager;
     private OwnerGroup theOwnerGroup;
     //
     // Constructors
@@ -35,13 +35,13 @@ public final class FrontOffice {
     //
     // Instance Methods
     //
-    public President getThePresident() {
+    public Person getThePresident() {
         return thePresident;
     }
-    public GeneralManager getTheGeneralManager() {
+    public Person getTheGeneralManager() {
         return theGeneralManager;
     }
-    public Manager getManager() {
+    public Person getManager() {
         return theManager;
     }
     public OwnerGroup getTheOwnerGroup() {
@@ -75,7 +75,7 @@ public final class FrontOffice {
     //
     // Language
     //
-    public void getGreeting(int i){
+    public void sayGreeting(int i){
         theManager.sayGreeting(theManager.getGreetings(i));
     }
 }

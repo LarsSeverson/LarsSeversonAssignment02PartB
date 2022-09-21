@@ -29,9 +29,16 @@ public final class GeneralManager extends Person {
     //
     // Language
     //
+
+    //
+    // Override
+    //
     @Override
     public void sayGreeting(String string) {
 
     }
-
+    @Override
+    public String getGreetings(int i) {
+        return null;
+    }
 }

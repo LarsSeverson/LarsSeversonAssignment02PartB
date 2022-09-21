@@ -15,6 +15,7 @@ public final class Club extends Organization {
     //
     // Instance Data Fields
     //
+    private Person busterPosey;
     private FrontOffice theOffice;
     String language = Language.getTheLanguage().getLanguage();
 
@@ -57,6 +58,7 @@ public final class Club extends Organization {
     }
     public Club(String defClub){
         theOffice = new FrontOffice(language);
+        setThePlayer(language);
         switch(language){
             case "ENGLISH" -> populateClubInfoEnglish(defClub);
             case "SPANISH" -> populateClubInfoSpanish(defClub);
@@ -152,6 +154,13 @@ public final class Club extends Organization {
     private void populateClubInfoFuture(String defClub) {
     }
     private void populateClubInfoSpanish(String defClub) {
+    }
+    private void setThePlayer(String language){
+        if (language == Language.getDefaultAlienSound()){
+            busterPosey = new Player(language, language);
+            return;
+        }
+        busterPosey = new Player("Buster", "Posey");
     }
     public void displayAbout() {
         System.out.println();
@@ -345,10 +354,14 @@ public final class Club extends Organization {
     public void setWildCardHeader(String wildCardHeader) {
         this.wildCardHeader = wildCardHeader;
     }
+    public Person getBusterPosey() {
+        return busterPosey;
+    }
+
     //
     // Language
     //
-    public void getGreeting(int i ){
-        theOffice.getGreeting(i);
+    public void sayGreeting(int i ){
+        theOffice.sayGreeting(i);
     }
 }
