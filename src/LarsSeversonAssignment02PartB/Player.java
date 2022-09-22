@@ -33,7 +33,7 @@ public final class Player extends Person {
 
     private String busterGreeting1Part1, busterGreeting1Part2, busterGreeting2, busterGreeting3Part1,
             busterGreeting3Part2, busterGreeting4, busterGreeting5, busterGreeting6Part1, busterGreeting6Part2,
-            busterGreeting7Part1, busterGreeting7Part2;
+            busterGreeting7Part1, busterGreeting7Part2, busterGreeting8Part1, busterGreeting8Part2;
     private String greetings[];
     //
     // Constructors
@@ -47,7 +47,8 @@ public final class Player extends Person {
         greetings = new String[]{
           busterGreeting1Part1, busterGreeting1Part2, busterGreeting2, busterGreeting3Part1,
                 busterGreeting3Part2, busterGreeting4, busterGreeting5, busterGreeting6Part1,
-                busterGreeting6Part2, busterGreeting7Part1, busterGreeting7Part2
+                busterGreeting6Part2, busterGreeting7Part1, busterGreeting7Part2, busterGreeting8Part1,
+                busterGreeting8Part2
         };
     }
     //
@@ -74,7 +75,8 @@ public final class Player extends Person {
                 + ", " + getPlayerNumber() + ": ");
         setBusterGreeting1Part1("Hello ");
         setBusterGreeting1Part2(". C-O-N-G-R-A-T-U-L-A-T-I-O-N-S!");
-        setBusterGreeting2(Config.getDefaultUniversity().toUpperCase() + ". " + "Way to go!");
+        setBusterGreeting2(Color.ANSI_PURPLE_BACKGROUND + Color.ANSI_YELLOW + Config.getDefaultUniversity().toUpperCase()
+                + Color.ANSI_RESET + ". " + "Way to go!");
         setBusterGreeting3Part1("Likewise, ");
         setBusterGreeting3Part2(". Very nice chatting w/ you.");
         setBusterGreeting4("How many SF Giants Thank You cards would you like to order?");
@@ -86,6 +88,8 @@ public final class Player extends Person {
         setBusterGreeting6Part2(":");
         setBusterGreeting7Part1("Thanks, ");
         setBusterGreeting7Part2(". Please confirm your order:");
+        setBusterGreeting8Part1("Thank you again, ");
+        setBusterGreeting8Part2(". See you at your graduation ceremony!");
     }
 
     private void setAlienInfo(){
@@ -109,16 +113,18 @@ public final class Player extends Person {
         setPersonHeader(super.getFirstName() + " " + super.getLastName()
                 + ", " + getPlayerNumber() + ": ");
         setBusterGreeting1Part1(alien);
-        setBusterGreeting1Part2(alien);
-        setBusterGreeting2(". " + alien);
-        setBusterGreeting3Part1(alien);
-        setBusterGreeting3Part2(alien);
+        setBusterGreeting1Part2("."+ alien);
+        setBusterGreeting2(alien + "." + alien);
+        setBusterGreeting3Part1(alien+alien);
+        setBusterGreeting3Part2("." + alien);
         setBusterGreeting4(alien);
         setBusterGreeting5(alien);
         setBusterGreeting6Part1(alien);
         setBusterGreeting6Part2(alien);
         setBusterGreeting7Part1(alien + " " + alien);
         setBusterGreeting7Part2(alien);
+        setBusterGreeting8Part1(alien+alien);
+        setBusterGreeting8Part2("." + alien);
     }
     //
     // Additional Instance Methods
@@ -236,6 +242,12 @@ public final class Player extends Person {
     }
     public void setBusterGreeting7Part2(String busterGreeting7Part2) {
         this.busterGreeting7Part2 = busterGreeting7Part2;
+    }
+    public void setBusterGreeting8Part1(String busterGreeting8Part1) {
+        this.busterGreeting8Part1 = busterGreeting8Part1;
+    }
+    public void setBusterGreeting8Part2(String busterGreeting8Part2) {
+        this.busterGreeting8Part2 = busterGreeting8Part2;
     }
 
     //

@@ -226,6 +226,7 @@ public final class Language {
         return theLanguage.LANGUAGE;
     }
 
+    // I disagree with having this method here. Very ambiguous
     public String getGreetingPhrase(int i) {
         return null;
     }

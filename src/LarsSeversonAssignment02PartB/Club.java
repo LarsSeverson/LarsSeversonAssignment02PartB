@@ -78,7 +78,7 @@ public final class Club extends Organization {
     // Static Methods
     //
     public static String getOfficialSong() {
-        return null;
+        return "Take me out to the ball game";
     }
     public static String getClubMessage(int i){
         return null;

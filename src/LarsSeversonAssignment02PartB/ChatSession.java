@@ -13,6 +13,7 @@ package LarsSeversonAssignment02PartB;/*
 
 import java.io.IOException;
 import java.util.InputMismatchException;
+import java.util.Objects;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
@@ -28,6 +29,7 @@ public final class ChatSession {
     private University theUniversity;
     private Person theStudent; // Defined in getAndCheckInput
     private Person thePlayer;
+    private Quiz theQuiz;
     //
     // Constructors
     //
@@ -44,6 +46,7 @@ public final class ChatSession {
         System.out.print(Timer.getDateFormat());
     }
     private void startChatSession(String language) {
+        displayTimerInformation();
         // in Alien
         if (language == Language.getDefaultAlienSound()){
             start = language;
@@ -163,8 +166,17 @@ public final class ChatSession {
         thePlayer.sayGreeting(thePlayer.getGreetings(9));
         theStudent.sayGreeting(theStudent.getFirstName());
         thePlayer.sayGreeting(thePlayer.getGreetings(10));
-        // Print the cards
+        // Print the cards:
         printTheCards();
+        // Student confirm:
+        theStudent.sayGreeting(theStudent.getTheirHeader());
+        input.nextLine();
+        // Goodbye Posey ;(
+        thePlayer.sayGreeting(thePlayer.getTheirHeader());
+        thePlayer.sayGreeting(thePlayer.getGreetings(11));
+        theStudent.sayGreeting(theStudent.getFirstName());
+        thePlayer.sayGreeting(thePlayer.getGreetings(12));
+        System.out.println();
     }
     private void getHowManyCards(){
         Scanner theInput = new Scanner(System.in);
@@ -212,8 +224,8 @@ public final class ChatSession {
             }
             // This statement adds to the cardArray I made in Card class
             Student.getTheCard().getCardArray().add(new Card(Student.getTheCard().getRecipientName(),
-                    Student.getTheCard().getArtSymbol(), Student.getTheCard().getMessageToRecipient(), 18,
-                    "Sans Serif"));
+                    Student.getTheCard().getArtSymbol(), Student.getTheCard().getMessageToRecipient(), 12,
+                    ""));
         }
     }
     private void printTheCards() {
@@ -221,13 +233,19 @@ public final class ChatSession {
             System.out.println();
             int n = Student.getTheCard().getCardArray().size();
             for(int i = 0; i < n; i++){
+                // This is a big line of code, refer to my comments for understanding
+                // For reference: generateSFGiantsCard(String recipient, String message, String senderFirstName, String senderEmail, char artSymbol, int artSize, String artFont)
                 SFGiantsCardGenerator.generateSFGiantsCard
-                        (Student.getTheCard().getACard(i).getRecipientName(),
-                                Student.getTheCard().getACard(i).getMessageToRecipient(),
-                                theStudent.getFirstName(), theStudent.getTheirEmail(),
-                                Student.getTheCard().getACard(i).getArtSymbol().charAt(0),
-                                Student.getTheCard().getACard(i).getArtSize(),
-                                Student.getTheCard().getACard(i).getArtFont());
+                        (Student.getTheCard().getACard(i).getRecipientName(),               // String recipient
+                                Student.getTheCard().getACard(i).getMessageToRecipient(),   // String message
+                                theStudent.getFirstName(), theStudent.getTheirEmail(),      // String senderFirstName, String senderEmail
+                                Student.getTheCard().getACard(i).getArtSymbol().charAt(0),  // char artSymbol
+                                Student.getTheCard().getACard(i).getArtSize(),              // int artSize
+                                Student.getTheCard().getACard(i).getArtFont());             // String artFont
+                System.out.println();
+                // This is going to iterate through the cardArray in Card class based on which int i it's in
+                // This could also be an example of a Queue data structure where the first in the array is the first to go out(print)
+                // Fun!
             }
         }
         catch (Exception e){
@@ -235,14 +253,60 @@ public final class ChatSession {
         }
     }
     private void runQuiz() {
+        System.out.println();
+
+        String club = Club.getShortName() + ": ";
+        String studentInput = theStudent.getTheirHeader();
+        Scanner input = new Scanner(System.in);
+        theQuiz = new Quiz(Language.getTheLanguage().getLanguage());
+        try{
+            // Question 1
+            theQuiz.askQuestion(club + theQuiz.getQuestions(0));
+            theQuiz.askQuestion(club + theQuiz.getQuestions(1));
+            theStudent.sayGreeting(studentInput);
+            theQuiz.setTheAnswer(new QuestionAnswer(input.nextLine().toUpperCase(), "abstract"));
+            // Question 2
+            theQuiz.askQuestion(club + theQuiz.getQuestions(2));
+            theStudent.sayGreeting(studentInput);
+            theQuiz.setTheAnswer(new QuestionAnswer(input.nextLine().toUpperCase(), "default"));
+            // Question 3
+            theQuiz.askQuestion(club + theQuiz.getQuestions(3));
+            theStudent.sayGreeting(studentInput);
+            theQuiz.setTheAnswer(new QuestionAnswer(input.nextLine().toUpperCase(), "yield"));
+            // Question 4
+            theQuiz.askQuestion(club + theQuiz.getQuestions(4));
+            theStudent.sayGreeting(studentInput);
+            theQuiz.setTheAnswer(new QuestionAnswer(input.nextLine().toUpperCase(), "permits"));
+            // Question 5
+            theQuiz.askQuestion(club + theQuiz.getQuestions(5));
+            theStudent.sayGreeting(studentInput);
+            theQuiz.setTheAnswer(new QuestionAnswer(input.nextLine().toUpperCase(), "Gigantes"));
+            // Question 6
+            theQuiz.askQuestion(club + theQuiz.getQuestions(6));
+            theStudent.sayGreeting(studentInput);
+            theQuiz.setTheAnswer(new QuestionAnswer(input.nextLine().toUpperCase(), "Ball Game"));
+            // Outro
+            System.out.println(theQuiz.getQuestionOutro());
+        }
+        catch (Exception ex){
+            System.out.println(QuestionAnswer.getIncorrectResponse());
+        }
     }
     private void stopChatSession() {
+        displayTimerInformation();
+        if (Objects.equals(Language.getTheLanguage().getLanguage(), "ENGLISH")){
+            System.out.println("Chat session ended.");
+        }
+        else{
+            System.out.print(Language.getTheLanguage().getLanguage());
+        }
     }
     public void runChatSession() {
-        displayTimerInformation();
         startChatSession(Language.getTheLanguage().getLanguage());
         connectChatters();
         chat();
+        runQuiz();
+        stopChatSession();
     }
     private void displayChatSessionInformation(){
         System.out.println();
