@@ -285,8 +285,7 @@ public final class Club extends Organization {
     public String getShortNameHeader() {
         return shortNameHeader;
     }
-    public void setShortNameHeader(String shortNameHeader) {
-        this.shortNameHeader = shortNameHeader;
+    public void setShortNameHeader(String shortNameHeader) { this.shortNameHeader = shortNameHeader;
     }
     public String getBallParkHeader() {
         return ballParkHeader;

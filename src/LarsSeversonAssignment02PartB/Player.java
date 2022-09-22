@@ -113,18 +113,18 @@ public final class Player extends Person {
         setPersonHeader(super.getFirstName() + " " + super.getLastName()
                 + ", " + getPlayerNumber() + ": ");
         setBusterGreeting1Part1(alien);
-        setBusterGreeting1Part2("."+ alien);
-        setBusterGreeting2(alien + "." + alien);
+        setBusterGreeting1Part2(". "+ alien);
+        setBusterGreeting2(alien + ". " + alien);
         setBusterGreeting3Part1(alien+alien);
-        setBusterGreeting3Part2("." + alien);
+        setBusterGreeting3Part2(". " + alien);
         setBusterGreeting4(alien);
         setBusterGreeting5(alien);
         setBusterGreeting6Part1(alien);
-        setBusterGreeting6Part2(alien);
+        setBusterGreeting6Part2(" " + alien);
         setBusterGreeting7Part1(alien + " " + alien);
-        setBusterGreeting7Part2(alien);
+        setBusterGreeting7Part2(" " + alien);
         setBusterGreeting8Part1(alien+alien);
-        setBusterGreeting8Part2("." + alien);
+        setBusterGreeting8Part2(". " + alien);
     }
     //
     // Additional Instance Methods

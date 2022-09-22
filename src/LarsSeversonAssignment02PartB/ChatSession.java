@@ -254,8 +254,12 @@ public final class ChatSession {
     }
     private void runQuiz() {
         System.out.println();
-
-        String club = Club.getShortName() + ": ";
+        String club;
+        if (Language.getTheLanguage().getLanguage() == Language.getDefaultAlienSound()){
+            club = Club.getShortName();
+        }else{
+            club = Club.getShortName() + ": ";
+        }
         String studentInput = theStudent.getTheirHeader();
         Scanner input = new Scanner(System.in);
         theQuiz = new Quiz(Language.getTheLanguage().getLanguage());
@@ -314,15 +318,7 @@ public final class ChatSession {
     //
     // Additional Instance Methods
     //
-    public Club getTheClub() {
-        return theClub;
-    }
-    public void setTheClub(Club theClub) {
-        this.theClub = theClub;
-    }
-    public Person getTheStudent() {
-        return theStudent;
-    }
+
     //
     // Language
     //
