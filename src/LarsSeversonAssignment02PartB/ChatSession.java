@@ -11,6 +11,7 @@ package LarsSeversonAssignment02PartB;/*
 // Please organize all the given files in 1 same package
 // Please make sure to read the provided "_ListOf-PleaseDoNotChange.txt"
 
+import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
@@ -154,13 +155,16 @@ public final class ChatSession {
         getHowManyCards();
 
         // Get card info: - Uses player greeting 7 and 8
+        // (In 3 lines please provide... get student input and make cards
         getCardInfo(Student.getTheCard().getCardCount());
-        System.out.println();
 
+        // Thanks [name], please confirm your order
         thePlayer.sayGreeting(thePlayer.getTheirHeader());
         thePlayer.sayGreeting(thePlayer.getGreetings(9));
         theStudent.sayGreeting(theStudent.getFirstName());
         thePlayer.sayGreeting(thePlayer.getGreetings(10));
+        // Print the cards
+        printTheCards();
     }
     private void getHowManyCards(){
         Scanner theInput = new Scanner(System.in);
@@ -185,9 +189,9 @@ public final class ChatSession {
     private void getCardInfo(int n){
         thePlayer.sayGreeting(thePlayer.getTheirHeader());
         thePlayer.sayGreeting(thePlayer.getGreetings(6));
+        System.out.println();
         for(int i = 1; i <= n; ++i){
             // Get the player questions setup
-            System.out.println();
             thePlayer.sayGreeting(thePlayer.getTheirHeader());
             thePlayer.sayGreeting(thePlayer.getGreetings(7) + i + thePlayer.getGreetings(8));
             // Now get the info
@@ -206,6 +210,28 @@ public final class ChatSession {
                     Student.getTheCard().setMessageToRecipient(input.nextLine());
                 }
             }
+            // This statement adds to the cardArray I made in Card class
+            Student.getTheCard().getCardArray().add(new Card(Student.getTheCard().getRecipientName(),
+                    Student.getTheCard().getArtSymbol(), Student.getTheCard().getMessageToRecipient(), 18,
+                    "Sans Serif"));
+        }
+    }
+    private void printTheCards() {
+        try {
+            System.out.println();
+            int n = Student.getTheCard().getCardArray().size();
+            for(int i = 0; i < n; i++){
+                SFGiantsCardGenerator.generateSFGiantsCard
+                        (Student.getTheCard().getACard(i).getRecipientName(),
+                                Student.getTheCard().getACard(i).getMessageToRecipient(),
+                                theStudent.getFirstName(), theStudent.getTheirEmail(),
+                                Student.getTheCard().getACard(i).getArtSymbol().charAt(0),
+                                Student.getTheCard().getACard(i).getArtSize(),
+                                Student.getTheCard().getACard(i).getArtFont());
+            }
+        }
+        catch (Exception e){
+            System.out.println(e);
         }
     }
     private void runQuiz() {

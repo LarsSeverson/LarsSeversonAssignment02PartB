@@ -4,7 +4,7 @@ package LarsSeversonAssignment02PartB;/*
  * CSC 220 -  Data Structures
  * File Name: Person.java
  * Author: Duc Ta
- * Author: <First Name> <Last Name>
+ * Author: Lars Severson
  * **********************************************
  */
 
@@ -70,6 +70,9 @@ public sealed abstract class Person implements Greeting permits GeneralManager, 
     // Student exclusive, but could also implement abstract because everyone has an email?
     public void setEmail(String theirEmail){
         this.theirEmail = theirEmail;
+    }
+    public String getTheirEmail() {
+        return theirEmail;
     }
     // If a person needs a header for the program here's where they'll define it
     public void setPersonHeader(String theirHeader){

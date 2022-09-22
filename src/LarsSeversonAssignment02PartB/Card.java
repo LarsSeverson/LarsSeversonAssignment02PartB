@@ -11,22 +11,33 @@ package LarsSeversonAssignment02PartB;/*
 // Please organize all the given files in 1 same package
 // Please make sure to read the provided "_ListOf-PleaseDoNotChange.txt"
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public final class Card {
     //
     // Instance Data Fields
     //
     private int artSize = 0;     // Please change artSize, if needed, to get an identical output
-    private String artFont = ""; // Please change artFont, if needed, to get an identical output
+    private String artSymbol = ""; // Please change artFont, if needed, to get an identical output
     private String recipientName;
-    private String artSymbol;
     private String messageToRecipient;
+    private String artFont;
     private int cardCount;
+    private ArrayList<Card> cardArray;
     //
     // Constructors
     //
     public Card() {
+        cardArray = new ArrayList<>();
     }
-
+    public Card(String recipientName, String artSymbol, String messageToRecipient, int artSize, String artFont){
+        this.recipientName = recipientName;
+        this.artSymbol = artSymbol;
+        this.messageToRecipient = messageToRecipient;
+        this.artSize = artSize;
+        this.artFont = artFont;
+    }
     //
     // Instance Methods
     //
@@ -39,12 +50,6 @@ public final class Card {
     }
     public void setArtSize(int artSize) {
         this.artSize = artSize;
-    }
-    public String getArtFont() {
-        return artFont;
-    }
-    public void setArtFont(String artFont) {
-        this.artFont = artFont;
     }
     public String getRecipientName() {
         return recipientName;
@@ -69,6 +74,15 @@ public final class Card {
     }
     public void setCardCount(int cardCount) {
         this.cardCount = cardCount;
+    }
+    public String getArtFont() {
+        return artFont;
+    }
+    public ArrayList<Card> getCardArray() {
+        return cardArray;
+    }
+    public Card getACard(int i){
+        return cardArray.get(i);
     }
     //
     // Language
