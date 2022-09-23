@@ -1,4 +1,4 @@
-package assignment02PartB;/*
+/*
  * **********************************************
  * San Francisco State University
  * CSC 220 -  Data Structures
@@ -8,6 +8,7 @@ package assignment02PartB;/*
  * **********************************************
  */
 
+package assignment02PartB;
 // Please organize all the given files in 1 same package
 // Please make sure to read the provided "_ListOf-PleaseDoNotChange.txt"
 
@@ -68,7 +69,7 @@ public final class LogFileDriver {
         //
     }
     private static void readFile(String filePath) {
-        File file = new File(filePath);
+        java.io.File file = new java.io.File(filePath);
         try (Scanner input = new Scanner(file)) {
             while (input.hasNextLine()) {
                 System.out.println(input.nextLine());
