@@ -1,4 +1,4 @@
-package LarsSeversonAssignment02PartB;
+package assignment02PartB;
 /*
  * **********************************************
  * San Francisco State University
@@ -19,6 +19,10 @@ package LarsSeversonAssignment02PartB;
     if there was another class that was defined as ClubReception or something
     like that, which also extends Person. In that case, I would have that class
     display the club greetings, and it would be very similar to this class.
+ */
+
+/*
+    Manager will hold the club greetings for the program to say
  */
 
 public final class Manager extends Person {

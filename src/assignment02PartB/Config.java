@@ -1,4 +1,4 @@
-package LarsSeversonAssignment02PartB;/*
+package assignment02PartB;/*
  * **********************************************
  * San Francisco State University
  * CSC 220 -  Data Structures
@@ -29,7 +29,7 @@ public final class Config {
     private static final String defaultLanguage = "ENGLISH"; // Default - And taking a request
     private static final String defaultTimeZone = "PST"; // Default - And taking a request
     private static final String defaultColorSequences = "ANSI"; // Default
-    private static final String defaultLogDirectoryPath = "./src/assignment02PartB/log/"; // Default
+    private static final String defaultLogDirectoryPath = "./src/assignment02PartB/log"; // Default
     private static final String defaultStdOutFilePath = "./src/assignment02PartB/log/StandardOut.log"; // Default
     private static final String defaultStdErrFilePath = "./src/assignment02PartB/log/StandardErr.log"; // Default
     private static final String defaultClub = "San Francisco Giants"; // Default

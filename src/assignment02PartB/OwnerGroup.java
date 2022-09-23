@@ -1,4 +1,5 @@
-package LarsSeversonAssignment02PartB;/*
+package assignment02PartB;
+/*
  * **********************************************
  * San Francisco State University
  * CSC 220 -  Data Structures
@@ -11,6 +12,9 @@ package LarsSeversonAssignment02PartB;/*
 // Please organize all the given files in 1 same package
 // Please make sure to read the provided "_ListOf-PleaseDoNotChange.txt"
 
+/*
+ * Not too important class, but still useful
+ */
 public final class OwnerGroup extends Organization{
     //
     // Data fields

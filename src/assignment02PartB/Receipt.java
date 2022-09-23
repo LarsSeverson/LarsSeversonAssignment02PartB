@@ -1,8 +1,9 @@
-package LarsSeversonAssignment02PartB;/*
+package assignment02PartB;
+/*
  * **********************************************
  * San Francisco State University
  * CSC 220 -  Data Structures
- * File Name: President.java
+ * File Name: Receipt.java
  * Author: Duc Ta
  * Author: <First Name> <Last Name>
  * **********************************************
@@ -11,36 +12,35 @@ package LarsSeversonAssignment02PartB;/*
 // Please organize all the given files in 1 same package
 // Please make sure to read the provided "_ListOf-PleaseDoNotChange.txt"
 
-public final class President extends Person {
+public final class Receipt {
+
     //
-    // Instance Data Fields
+    // Static Data Fields
     //
 
     //
+    // Instance Data Fields
+    //
+    private String theReceipt;
+    //
     // Constructors
     //
-    public President(String firstName, String lastName) {
-        super(firstName, lastName);
+    public Receipt() {
     }
+
+    //
+    // Static Methods
+    //
 
     //
     // Instance Methods
     //
 
     //
+    // Additional Methods
+    //
+
+    //
     // Language
     //
-
-    //
-    // Override
-    //
-    @Override
-    public void sayGreeting(String string) {
-
-    }
-
-    @Override
-    public String getGreetings(int i) {
-        return null;
-    }
 }

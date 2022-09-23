@@ -1,4 +1,4 @@
-package LarsSeversonAssignment02PartB;/*
+package assignment02PartB;/*
  * **********************************************
  * San Francisco State University
  * CSC 220 -  Data Structures
@@ -11,18 +11,26 @@ package LarsSeversonAssignment02PartB;/*
 // Please organize all the given files in 1 same package
 // Please make sure to read the provided "_ListOf-PleaseDoNotChange.txt"
 
+/*
+ * The Club class
+ * It has a player and its front office
+ */
+
 public final class Club extends Organization {
     //
     // Instance Data Fields
     //
+        // Objects
     private Person busterPosey;
     private FrontOffice theOffice;
-    String language = Language.getTheLanguage().getLanguage();
 
+        // Non-Header Strings
+    private final String language = Language.getTheLanguage().getLanguage();
     private String clubName;
     private String ballPark;
     private String color1,color2,color3,color4;
 
+        // Header Strings
     private String infoHeader;
     private String clubNameHeader;
     private String shortNameHeader;
@@ -32,18 +40,18 @@ public final class Club extends Organization {
     private String presidentHeader;
     private String generalManagerHeader;
     private String managerHeader;
-
-    private int establishDate;
-    private int worldSeriesTitles;
-    private int nlPennants;
-    private int divisionTitles;
-    private int wildCardBerths;
-
     private String establishDateHeader;
     private String worldSeriesTitlesHeader;
     private String nlPennantsHeader;
     private String divisionsHeader;
     private String wildCardHeader;
+
+        // integers
+    private int establishDate;
+    private int worldSeriesTitles;
+    private int nlPennants;
+    private int divisionTitles;
+    private int wildCardBerths;
 
     //
     // Static Data Fields
@@ -186,7 +194,7 @@ public final class Club extends Organization {
         System.out.println(getInfoHeader());
     }
     public void displayMission() {
-
+        // useless I think
     }
     //
     // Additional Instance Methods

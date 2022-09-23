@@ -1,16 +1,20 @@
-package LarsSeversonAssignment02PartB;/*
+package assignment02PartB;/*
  * **********************************************
  * San Francisco State larsSeversonAssignment02PartB.University
  * CSC 220 -  Data Structures
  * File Name: larsSeversonAssignment02PartB.Player.java
  * Author: Duc Ta
- * Author: <First Name> <Last Name>
+ * Author: Lars Severson
  * **********************************************
  */
 
 // Please organize all the given files in 1 same package
 // Please make sure to read the provided "_ListOf-PleaseDoNotChange.txt"
 
+/*
+ * Here's where to hold all the player info. If I wanted to add a new player
+ * I could just make a new object then populate phrases
+ */
 public final class Player extends Person {
     //
     // Instance Data Fields
@@ -26,15 +30,16 @@ public final class Player extends Person {
 
     private String theClub;
     private String playerPosition;
-    private int playerNumber;
     private String playerBats;
     private String playerThrows;
+
+    private int playerNumber;
     private int MLBDebut;
 
     private String busterGreeting1Part1, busterGreeting1Part2, busterGreeting2, busterGreeting3Part1,
             busterGreeting3Part2, busterGreeting4, busterGreeting5, busterGreeting6Part1, busterGreeting6Part2,
             busterGreeting7Part1, busterGreeting7Part2, busterGreeting8Part1, busterGreeting8Part2;
-    private String greetings[];
+    private final String[] greetings;
     //
     // Constructors
     //
@@ -210,6 +215,7 @@ public final class Player extends Person {
     public void setMLBDebut(int MLBDebut) {
         this.MLBDebut = MLBDebut;
     }
+
     private void setBusterGreeting1Part1(String busterGreeting1Part1) {
         this.busterGreeting1Part1 = busterGreeting1Part1;
     }
@@ -249,7 +255,6 @@ public final class Player extends Person {
     public void setBusterGreeting8Part2(String busterGreeting8Part2) {
         this.busterGreeting8Part2 = busterGreeting8Part2;
     }
-
     //
     // @Override
     //

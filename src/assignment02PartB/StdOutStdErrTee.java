@@ -8,7 +8,7 @@
  * **********************************************
  */
 
-package LarsSeversonAssignment02PartB;
+package assignment02PartB;
 
 // Please organize all the given files in 1 same package
 // Please make sure to read the provided "_ListOf-PleaseDoNotChange.txt"
@@ -20,37 +20,29 @@ public class StdOutStdErrTee extends OutputStream {
     //
     // Instance Data Fields
     //
-    private String stdOutFilePath = Config.getDefaultStdOutFilePath();
-    private String stdErrFilePath = Config.getDefaultStdErrFilePath();
+    private String stdOutFilePath;
+    private String stdErrFilePath;
     private OutputStream[] streamsToConsoleToFile;
 
     //
     // Constructors
     //
     public StdOutStdErrTee() {
-        //
-        // Add code which our own implementation needs
-        //
+        this.stdOutFilePath = Config.getDefaultStdOutFilePath();
+        this.stdErrFilePath = Config.getDefaultStdErrFilePath();
     }
-
     public StdOutStdErrTee(PrintStream printStream, FileOutputStream fileOutputStream) {
         this.streamsToConsoleToFile = new OutputStream[2];
         streamsToConsoleToFile[0] = printStream;
         streamsToConsoleToFile[1] = fileOutputStream;
     }
-
-    public StdOutStdErrTee(String stdOutFilePath, String stdErrFilePath) {
-        this.stdOutFilePath = stdOutFilePath;
-        this.stdErrFilePath = stdErrFilePath;
-    }
-
     //
     // Instance Methods
     //
     public void startLog() {
         try {
-            FileOutputStream stdOutFile = new FileOutputStream(new File(this.stdOutFilePath));
-            FileOutputStream stdErrFile = new FileOutputStream(new File(this.stdErrFilePath));
+            FileOutputStream stdOutFile = new FileOutputStream(this.stdOutFilePath);
+            FileOutputStream stdErrFile = new FileOutputStream(this.stdErrFilePath);
 
             StdOutStdErrTee allStdOut = new StdOutStdErrTee(System.out, stdOutFile);
             StdOutStdErrTee allStdErr = new StdOutStdErrTee(System.err, stdErrFile);
@@ -66,10 +58,14 @@ public class StdOutStdErrTee extends OutputStream {
         }
     }
 
-    public static void stopLog() {
-        //
-        // Add code which our own implementation needs
-        //
+    public void stopLog() {
+        try{
+            streamsToConsoleToFile[0].close();
+            streamsToConsoleToFile[1].close();
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
     //
@@ -77,10 +73,7 @@ public class StdOutStdErrTee extends OutputStream {
     //
     @Override
     public void write(int b) throws IOException {
-        for (OutputStream out : this.streamsToConsoleToFile) {
-            out.write(b);
-            out.flush();
-        }
+
     }
 
     public String getStdOutFilePath() {

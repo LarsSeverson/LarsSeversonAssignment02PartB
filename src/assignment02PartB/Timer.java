@@ -1,4 +1,4 @@
-package LarsSeversonAssignment02PartB;/*
+package assignment02PartB;/*
  * **********************************************
  * San Francisco State University
  * CSC 220 -  Data Structures
@@ -88,7 +88,7 @@ public class Timer {
                     String[] items = s.toLowerCase().split("\\s*,\\s*");
                     for(String i : items){
                         if (!timeZoneList.contains(i)){
-                            System.out.println("UNSUPPORTED language. Please enter your language.");
+                            System.out.println("INVALID time zone. Please enter your time zone.");
                             break;
                         }
                     }

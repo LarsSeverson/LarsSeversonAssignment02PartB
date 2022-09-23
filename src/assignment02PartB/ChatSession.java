@@ -1,4 +1,4 @@
-package LarsSeversonAssignment02PartB;/*
+package assignment02PartB;/*
  * **********************************************
  * San Francisco State University
  * CSC 220 -  Data Structures
@@ -11,17 +11,18 @@ package LarsSeversonAssignment02PartB;/*
 // Please organize all the given files in 1 same package
 // Please make sure to read the provided "_ListOf-PleaseDoNotChange.txt"
 
-import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Objects;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
+/*
+ *  This is where the main chat session is going to take place.
+ *  Every chat session has a club, a student, a player,
+ *  a university, and finally a Quiz.
+ */
+
 public final class ChatSession {
-    //
-    //  Static Data Fields
-    //
-    private static String start;
     //
     // Instance Data Fields
     //
@@ -34,93 +35,88 @@ public final class ChatSession {
     // Constructors
     //
     public ChatSession() {
+        // Future implementation
     }
     public ChatSession(Club theClub, University theUniversity){
+        // Set the objects
         this.theClub = theClub;
         this.theUniversity = theUniversity;
     }
     //
     // Instance Methods
     //
-    public static void displayTimerInformation(){
-        System.out.print(Timer.getDateFormat());
+    public void runChatSession() {
+        startChatSession(Language.getTheLanguage().getLanguage());
+        connectChatters();
+        chat();
+        runQuiz();
+        stopChatSession();
     }
+        // Private Instance Methods
+
     private void startChatSession(String language) {
         displayTimerInformation();
+        String start; // Chat session started.
         // in Alien
         if (language == Language.getDefaultAlienSound()){
             start = language;
             System.out.println(start + "\n");
 
+            // Welcome to the SAN FRANCISCO GIANTS
             theClub.sayGreeting(0);
             theClub.displayAbout();
 
+            // Your first and last name, please:
             getAndCheckInput();
 
+            // Your school email address, please:      // Made local because any input is fine
             Scanner input = new Scanner(System.in);
             theClub.sayGreeting(2);
             theStudent.setEmail(input.nextLine());
 
+            // Welcome to my University
             theStudent.sayGreeting(theStudent.getTheirHeader());
             theStudent.sayGreeting(theStudent.getGreetings(0));
             theUniversity.displayAbout();
+
+            // We are connecting you with our player...
             theClub.sayGreeting(3);
+            // Goes back to runChatSession()
         }
         // in English
         else{
             start = "Chat session started.\n";
             System.out.println(start);
 
+            // Welcome to the SAN FRANCISCO GIANTS
             theClub.sayGreeting(0);
             theClub.displayAbout();
 
             // Please enter first and last name:
             getAndCheckInput();
+
             // Please enter school email:
             Scanner input = new Scanner(System.in);
             theClub.sayGreeting(2);
             theStudent.setEmail(input.nextLine());
+
             // Student University greeting:
             theStudent.sayGreeting(theStudent.getTheirHeader());
             theStudent.sayGreeting(theStudent.getGreetings(0));
             theUniversity.displayAbout();
+
             // Greeting then -> connectChatters()
             theClub.sayGreeting(3);
+
+            // Goes back to runChatSession()
         }
     }
-    private void getAndCheckInput(){
-        Scanner input = new Scanner(System.in);
-        String theInput;
-        String[] elements = null;
-        boolean loop = true;
-        while(loop){
-            theClub.sayGreeting(1);
-            theInput = input.nextLine();
-            elements = theInput.split("\\s");
-            if (elements.length == 2){
-                loop = false;
-            }
-            else {
-                System.out.println("Input Error.");
-            }
-        }
-        theStudent = new Student(elements[0], elements[1]);
-    }
+
     private void connectChatters() {
         System.out.println();
+        // . second . second . second . second .
         try{
-            for(int i = 0; i < 4; ++i){
-                System.out.print(". ");
-                TimeUnit.SECONDS.sleep(1);
-            }
-        }
-        catch(InterruptedException ex){
-            ex.printStackTrace();
-        }
-        this.thePlayer = theClub.getBusterPosey();
-        thePlayer.displayPlayerInfo();
-        try{
-            for(int i = 0; i < 4; ++i){
+            for(int i = 0; i < 5; ++i){
                 System.out.print(". ");
                 TimeUnit.SECONDS.sleep(1);
             }
@@ -129,25 +125,45 @@ public final class ChatSession {
             ex.printStackTrace();
         }
 
+        // Connect to Buster Posey
+        this.thePlayer = theClub.getBusterPosey();
+        thePlayer.displayPlayerInfo();
+
+        try{
+            for(int i = 0; i < 5; ++i){
+                System.out.print(". ");
+                TimeUnit.SECONDS.sleep(1);
+            }
+        }
+        catch(InterruptedException ex){
+            ex.printStackTrace();
+        }
+        // Connected - > back to runChatSession()
     }
+
     private void chat() {
+        // Hello, <name>. congrats
         System.out.println();
         thePlayer.sayGreeting(thePlayer.getTheirHeader());
         thePlayer.sayGreeting(thePlayer.getGreetings(0));
         theStudent.sayGreeting(theStudent.getFirstName());
         thePlayer.sayGreeting(thePlayer.getGreetings(1));
 
+        // SFSU. Way to go!
         System.out.println();
         thePlayer.sayGreeting(thePlayer.getTheirHeader());
         thePlayer.sayGreeting(thePlayer.getGreetings(2));
+
         // Sorry if the continuous Scanner objects get confusing, I'm used to C++ where I can
         // just put cin >> so this is how my brain operates for inputs. Not sure if there's a better way.
+        // Student input
         Scanner input = new Scanner(System.in);
         System.out.println();
         theStudent.sayGreeting(theStudent.getTheirHeader());
         // Since it doesn't really matter what the student says, just get input for funzies
         input.nextLine();
 
+        // How many you want to order?
         thePlayer.sayGreeting(thePlayer.getTheirHeader());
         thePlayer.sayGreeting(thePlayer.getGreetings(3));
         theStudent.sayGreeting(theStudent.getFirstName());
@@ -166,11 +182,14 @@ public final class ChatSession {
         thePlayer.sayGreeting(thePlayer.getGreetings(9));
         theStudent.sayGreeting(theStudent.getFirstName());
         thePlayer.sayGreeting(thePlayer.getGreetings(10));
+
         // Print the cards:
         printTheCards();
+
         // Student confirm:
         theStudent.sayGreeting(theStudent.getTheirHeader());
         input.nextLine();
+
         // Goodbye Posey ;(
         thePlayer.sayGreeting(thePlayer.getTheirHeader());
         thePlayer.sayGreeting(thePlayer.getGreetings(11));
@@ -178,23 +197,163 @@ public final class ChatSession {
         thePlayer.sayGreeting(thePlayer.getGreetings(12));
         System.out.println();
     }
+
+    private void printTheCards() {
+        try {
+            System.out.println();
+            int n = Student.getTheCard().getCardArray().size();
+            for(int i = 0; i < n; i++){
+                // This is a big line of code, refer to my comments for understanding
+                // For reference: generateSFGiantsCard(String recipient, String message, String senderFirstName, String senderEmail, char artSymbol, int artSize, String artFont)
+                SFGiantsCardGenerator.generateSFGiantsCard
+                        (Student.getTheCard().getACard(i).getRecipientName(),               // String recipient
+                                Student.getTheCard().getACard(i).getMessageToRecipient(),   // String message
+                                theStudent.getFirstName(), theStudent.getTheirEmail(),      // String senderFirstName, String senderEmail
+                                Student.getTheCard().getACard(i).getArtSymbol().charAt(0),  // char artSymbol
+                                Student.getTheCard().getACard(i).getArtSize(),              // int artSize
+                                Student.getTheCard().getACard(i).getArtFont());             // String artFont
+                System.out.println();
+                // This is going to iterate through the cardArray in Card class based on which int i it's in
+                // This could also be an example of a Queue data structure where the first in the array is the first to go out(print)
+                // Fun!
+            }
+        }
+        catch (Exception e){
+            System.out.println(e);
+        }
+    }
+
+    private void runQuiz() {
+        System.out.println();
+        String club;
+
+        // Just for the question header
+        if (Language.getTheLanguage().getLanguage() == Language.getDefaultAlienSound()){
+            club = Club.getShortName();
+        }
+        else{
+            club = Club.getShortName() + ": ";
+        }
+
+        // Get confirmation
+        String studentInput = theStudent.getTheirHeader();
+        Scanner input = new Scanner(System.in);
+
+        // Create the Quiz
+        theQuiz = new Quiz(Language.getTheLanguage().getLanguage());
+
+        // Run the Quiz
+        try{
+            // Question 1
+            theQuiz.askQuestion(club + theQuiz.getQuestions(0));
+            theQuiz.askQuestion(club + theQuiz.getQuestions(1));
+            theStudent.sayGreeting(studentInput);
+            theQuiz.setTheAnswer(new QuestionAnswer(input.nextLine().toUpperCase(), "abstract"));
+            // Question 2
+            theQuiz.askQuestion(club + theQuiz.getQuestions(2));
+            theStudent.sayGreeting(studentInput);
+            theQuiz.setTheAnswer(new QuestionAnswer(input.nextLine().toUpperCase(), "default"));
+            // Question 3
+            theQuiz.askQuestion(club + theQuiz.getQuestions(3));
+            theStudent.sayGreeting(studentInput);
+            theQuiz.setTheAnswer(new QuestionAnswer(input.nextLine().toUpperCase(), "yield"));
+            // Question 4
+            theQuiz.askQuestion(club + theQuiz.getQuestions(4));
+            theStudent.sayGreeting(studentInput);
+            theQuiz.setTheAnswer(new QuestionAnswer(input.nextLine().toUpperCase(), "permits"));
+            // Question 5
+            theQuiz.askQuestion(club + theQuiz.getQuestions(5));
+            theStudent.sayGreeting(studentInput);
+            theQuiz.setTheAnswer(new QuestionAnswer(input.nextLine().toUpperCase(), "Gigantes"));
+            // Question 6
+            theQuiz.askQuestion(club + theQuiz.getQuestions(6));
+            theStudent.sayGreeting(studentInput);
+            theQuiz.setTheAnswer(new QuestionAnswer(input.nextLine().toUpperCase(), "Ball Game"));
+            // Outro
+            System.out.println(theQuiz.getQuestionOutro());
+        }
+        catch (Exception ex){
+            // If wrong
+            System.out.println(QuestionAnswer.getIncorrectResponse1());
+        }
+        // Back to runChatSession()
+    }
+
+    private void stopChatSession() {
+        // Get the time
+        displayTimerInformation();
+
+        // End the chat greeting
+        if (Objects.equals(Language.getTheLanguage().getLanguage(), "ENGLISH")){
+            System.out.println("Chat session ended.");
+        }
+        else{
+            System.out.print(Language.getTheLanguage().getLanguage());
+        }
+
+        // Stop log -> chat done
+        Messenger.getConfig().getStdOutStdErrTee().stopLog();
+    }
+
+        // Private instance Methods
+
+    //
+    // Additional Private Instance Methods
+    //
+    private void getAndCheckInput(){
+        // Want to make sure they input a first name and last name
+        // Also store first last name into an array then set student based on array
+        Scanner input = new Scanner(System.in);
+
+        String theInput;
+        String[] elements = null;
+
+        boolean loop = true;
+
+        while(loop){
+
+            // First and last name please:
+            theClub.sayGreeting(1);
+
+            theInput = input.nextLine();
+            elements = theInput.split("\\s");
+            if (elements.length == 2){
+                loop = false;
+            }
+            else {
+                System.out.println("Input Error.");
+            }
+        }
+        // Set student
+        theStudent = new Student(elements[0], elements[1]);
+    }
+    private static void displayTimerInformation(){
+        // YYYY/MM/DD HH:MM:SS [MS] PM/AM TimeZone
+        System.out.print(Timer.getDateFormat());
+    }
     private void getHowManyCards(){
         Scanner theInput = new Scanner(System.in);
         int count = 3;
+
         while(count != -1){
+            // How many to order / check if int
             thePlayer.sayGreeting(thePlayer.getTheirHeader());
             thePlayer.sayGreeting(thePlayer.getGreetings(5));
             System.out.println();
             theStudent.sayGreeting(theStudent.getTheirHeader());
+
+            // Check if int
             try{
+                // If int
                 Student.getTheCard().setCardCount(theInput.nextInt());
                 break;
             }
             catch(InputMismatchException e){
+                // If not an int
                 theInput.next();
                 System.out.println("Please enter an INTEGER " + count + " tries left.");
                 System.out.println(e);
-                count--;
+                count--; // Track how many tries
             }
         }
     }
@@ -228,97 +387,9 @@ public final class ChatSession {
                     ""));
         }
     }
-    private void printTheCards() {
-        try {
-            System.out.println();
-            int n = Student.getTheCard().getCardArray().size();
-            for(int i = 0; i < n; i++){
-                // This is a big line of code, refer to my comments for understanding
-                // For reference: generateSFGiantsCard(String recipient, String message, String senderFirstName, String senderEmail, char artSymbol, int artSize, String artFont)
-                SFGiantsCardGenerator.generateSFGiantsCard
-                        (Student.getTheCard().getACard(i).getRecipientName(),               // String recipient
-                                Student.getTheCard().getACard(i).getMessageToRecipient(),   // String message
-                                theStudent.getFirstName(), theStudent.getTheirEmail(),      // String senderFirstName, String senderEmail
-                                Student.getTheCard().getACard(i).getArtSymbol().charAt(0),  // char artSymbol
-                                Student.getTheCard().getACard(i).getArtSize(),              // int artSize
-                                Student.getTheCard().getACard(i).getArtFont());             // String artFont
-                System.out.println();
-                // This is going to iterate through the cardArray in Card class based on which int i it's in
-                // This could also be an example of a Queue data structure where the first in the array is the first to go out(print)
-                // Fun!
-            }
-        }
-        catch (Exception e){
-            System.out.println(e);
-        }
-    }
-    private void runQuiz() {
-        System.out.println();
-        String club;
-        if (Language.getTheLanguage().getLanguage() == Language.getDefaultAlienSound()){
-            club = Club.getShortName();
-        }else{
-            club = Club.getShortName() + ": ";
-        }
-        String studentInput = theStudent.getTheirHeader();
-        Scanner input = new Scanner(System.in);
-        theQuiz = new Quiz(Language.getTheLanguage().getLanguage());
-        try{
-            // Question 1
-            theQuiz.askQuestion(club + theQuiz.getQuestions(0));
-            theQuiz.askQuestion(club + theQuiz.getQuestions(1));
-            theStudent.sayGreeting(studentInput);
-            theQuiz.setTheAnswer(new QuestionAnswer(input.nextLine().toUpperCase(), "abstract"));
-            // Question 2
-            theQuiz.askQuestion(club + theQuiz.getQuestions(2));
-            theStudent.sayGreeting(studentInput);
-            theQuiz.setTheAnswer(new QuestionAnswer(input.nextLine().toUpperCase(), "default"));
-            // Question 3
-            theQuiz.askQuestion(club + theQuiz.getQuestions(3));
-            theStudent.sayGreeting(studentInput);
-            theQuiz.setTheAnswer(new QuestionAnswer(input.nextLine().toUpperCase(), "yield"));
-            // Question 4
-            theQuiz.askQuestion(club + theQuiz.getQuestions(4));
-            theStudent.sayGreeting(studentInput);
-            theQuiz.setTheAnswer(new QuestionAnswer(input.nextLine().toUpperCase(), "permits"));
-            // Question 5
-            theQuiz.askQuestion(club + theQuiz.getQuestions(5));
-            theStudent.sayGreeting(studentInput);
-            theQuiz.setTheAnswer(new QuestionAnswer(input.nextLine().toUpperCase(), "Gigantes"));
-            // Question 6
-            theQuiz.askQuestion(club + theQuiz.getQuestions(6));
-            theStudent.sayGreeting(studentInput);
-            theQuiz.setTheAnswer(new QuestionAnswer(input.nextLine().toUpperCase(), "Ball Game"));
-            // Outro
-            System.out.println(theQuiz.getQuestionOutro());
-        }
-        catch (Exception ex){
-            System.out.println(QuestionAnswer.getIncorrectResponse());
-        }
-    }
-    private void stopChatSession() {
-        displayTimerInformation();
-        if (Objects.equals(Language.getTheLanguage().getLanguage(), "ENGLISH")){
-            System.out.println("Chat session ended.");
-        }
-        else{
-            System.out.print(Language.getTheLanguage().getLanguage());
-        }
-    }
-    public void runChatSession() {
-        startChatSession(Language.getTheLanguage().getLanguage());
-        connectChatters();
-        chat();
-        runQuiz();
-        stopChatSession();
-    }
     private void displayChatSessionInformation(){
         System.out.println();
     }
-    //
-    // Additional Instance Methods
-    //
-
     //
     // Language
     //

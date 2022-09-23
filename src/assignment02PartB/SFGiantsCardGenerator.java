@@ -1,4 +1,4 @@
-package LarsSeversonAssignment02PartB;/*
+package assignment02PartB;/*
  * ****************************************************************
  * ASCII Art Generator in Java.
  * Prints a given text as an ASCII text art on the console.

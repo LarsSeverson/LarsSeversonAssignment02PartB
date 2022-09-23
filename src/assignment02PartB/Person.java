@@ -1,4 +1,4 @@
-package LarsSeversonAssignment02PartB;/*
+package assignment02PartB;/*
  * **********************************************
  * San Francisco State University
  * CSC 220 -  Data Structures
@@ -15,6 +15,11 @@ package LarsSeversonAssignment02PartB;/*
 // We are learning the new elements of JAVA 15.
 // "sealed" and "permits" are used here so that we will have one more example to reference.
 // We do not need to understand "sealed" and "permits" in order to start and complete this assignment.
+
+/*
+ * Whenever I make a person, in this case a gm, manager, player, president, or student,
+ * I will refer to this class and polymorphism
+ */
 public sealed abstract class Person implements Greeting permits GeneralManager, Manager, Player, President, Student {
 
     //
@@ -38,15 +43,23 @@ public sealed abstract class Person implements Greeting permits GeneralManager, 
     //
     // Instance Methods
     //
+
+    // If a person needs a header for the program here's where they'll define it
+    public void setPersonHeader(String theirHeader){
+        this.theirHeader = theirHeader;
+    }
+
     public void birth(String firstName, String lastName){
         // Making a baby
         setTheirLanguage(Language.getTheLanguage().getLanguage());
         giveName(firstName, lastName);
     }
+
     public void giveName(String firstName, String lastName){
         this.firstName = firstName;
         this.lastName = lastName;
     }
+
     public String getFirstName() {
         return firstName;
     }
@@ -71,13 +84,11 @@ public sealed abstract class Person implements Greeting permits GeneralManager, 
     public void setEmail(String theirEmail){
         this.theirEmail = theirEmail;
     }
+
     public String getTheirEmail() {
         return theirEmail;
     }
-    // If a person needs a header for the program here's where they'll define it
-    public void setPersonHeader(String theirHeader){
-        this.theirHeader = theirHeader;
-    }
+
     //
     // Language
     //

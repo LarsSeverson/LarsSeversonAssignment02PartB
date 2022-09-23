@@ -1,4 +1,4 @@
-package LarsSeversonAssignment02PartB;/*
+package assignment02PartB;/*
  * **********************************************
  * San Francisco State University
  * CSC 220 -  Data Structures
@@ -11,6 +11,9 @@ package LarsSeversonAssignment02PartB;/*
 // Please organize all the given files in 1 same package
 // Please make sure to read the provided "_ListOf-PleaseDoNotChange.txt"
 
+/*
+ * Receipt info goes in this class I think?
+ */
 public final class Directory {
 
     //
@@ -32,7 +35,7 @@ public final class Directory {
         if (Language.getTheLanguage().getLanguage() == Language.getDefaultAlienSound()){
             return Language.getDefaultAlienSound();
         }
-        return "./src/larsSeversonAssignment02PartB/log/";
+        return "./src/LarsSeversonAssignment02PartB/log/";
     }
 
     //

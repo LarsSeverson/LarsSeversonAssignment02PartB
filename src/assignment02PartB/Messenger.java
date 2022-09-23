@@ -1,4 +1,4 @@
-package LarsSeversonAssignment02PartB;/*
+package assignment02PartB;/*
  * **********************************************
  * San Francisco State University
  * CSC 220 -  Data Structures
@@ -50,15 +50,15 @@ public final class Messenger {
         return Messenger.config;
     }
     private static void start() {
-       // Messenger.config.getStdOutStdErrTee().startLog();
+        Messenger.config.getStdOutStdErrTee().startLog();
         Messenger.config.setPreferences();
     }
     private static void chat() {
         (new ChatSession(Messenger.config.getClub(), Messenger.config.getUniversity())).runChatSession();
     }
     private static void stop() {
-        Messenger.config.getStdOutStdErrTee().stopLog();
-        // LogFileDriver.run(); // Please temporarily uncomment this line to run LogFileDriver.
+        //Messenger.config.getStdOutStdErrTee().stopLog();
+        LogFileDriver.run(); // Please temporarily uncomment this line to run LogFileDriver.
     }
 }
 

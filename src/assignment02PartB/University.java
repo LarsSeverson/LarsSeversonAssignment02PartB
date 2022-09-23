@@ -1,4 +1,4 @@
-package LarsSeversonAssignment02PartB;/*
+package assignment02PartB;/*
  * **********************************************
  * San Francisco State University
  * CSC 220 -  Data Structures
@@ -16,6 +16,7 @@ public final class University extends Organization {
     // Static Data Fields
     //
     private static final String language = Language.getTheLanguage().getLanguage();
+    private static String infoHeader;
     //
     // Instance Data Fields
     //
@@ -29,9 +30,9 @@ public final class University extends Organization {
     private String nickName;
     private String universityMascot;
     private String universityWebsite;
+
     private int yearOfEstablishment;
 
-    private static String infoHeader;
     private String universityNameHeader;
     private String mottoHeaderLatin;
     private String mottoHeaderEnglish;
@@ -64,6 +65,7 @@ public final class University extends Organization {
     //
     // Static Methods
     //
+
     //
     // Instance Methods
     //

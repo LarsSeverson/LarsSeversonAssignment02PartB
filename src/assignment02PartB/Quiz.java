@@ -1,4 +1,4 @@
-package LarsSeversonAssignment02PartB;/*
+package assignment02PartB;/*
  * **********************************************
  * San Francisco State University
  * CSC 220 -  Data Structures
@@ -11,6 +11,10 @@ package LarsSeversonAssignment02PartB;/*
 // Please organize all the given files in 1 same package
 // Please make sure to read the provided "_ListOf-PleaseDoNotChange.txt"
 
+/*
+ * This is where the Quiz will go.
+ * This includes the questions and the outro response
+ */
 public final class Quiz {
     //
     // Instance Data Fields
@@ -104,9 +108,6 @@ public final class Quiz {
     }
     public void setTheAnswer(QuestionAnswer theAnswer) {
         this.theAnswer = theAnswer;
-    }
-    public QuestionAnswer getTheAnswer() {
-        return theAnswer;
     }
     //
     // Language

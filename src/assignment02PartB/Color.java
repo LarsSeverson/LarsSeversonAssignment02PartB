@@ -1,4 +1,4 @@
-package LarsSeversonAssignment02PartB;
+package assignment02PartB;
 /*
  * **********************************************
  * San Francisco State University

@@ -1,4 +1,4 @@
-package LarsSeversonAssignment02PartB;
+package assignment02PartB;
 /*
  * **********************************************
  * San Francisco State University
@@ -24,6 +24,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
+/*
+ * Holds all the language operations. I started out in this class
+ * so apologies if it's a little messy
+ */
 public final class Language {
     //
     // Static Data Fields

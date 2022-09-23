@@ -1,4 +1,5 @@
-package LarsSeversonAssignment02PartB;/*
+package assignment02PartB;
+/*
  * **********************************************
  * San Francisco State University
  * CSC 220 -  Data Structures
@@ -12,18 +13,24 @@ package LarsSeversonAssignment02PartB;/*
 // Please make sure to read the provided "_ListOf-PleaseDoNotChange.txt"
 
 import java.util.ArrayList;
-import java.util.Arrays;
+/*
+ *  This is where the Card will be held.
+ *  I need to have an ArrayList of Cards because if there is more than
+ *  one card ordered, I'll need to have a way to access it.
+ */
 
 public final class Card {
     //
     // Instance Data Fields
     //
-    private int artSize = 0;     // Please change artSize, if needed, to get an identical output
+    private int artSize = 0;       // Please change artSize, if needed, to get an identical output
+    private int cardCount;
+
     private String artSymbol = ""; // Please change artFont, if needed, to get an identical output
     private String recipientName;
     private String messageToRecipient;
     private String artFont;
-    private int cardCount;
+
     private ArrayList<Card> cardArray;
     //
     // Constructors
@@ -47,9 +54,6 @@ public final class Card {
     //
     public int getArtSize() {
         return artSize;
-    }
-    public void setArtSize(int artSize) {
-        this.artSize = artSize;
     }
     public String getRecipientName() {
         return recipientName;
