@@ -31,6 +31,7 @@ public final class ChatSession {
     private Person theStudent; // Defined in getAndCheckInput
     private Person thePlayer;
     private Quiz theQuiz;
+    private Receipt theReceipt;
     //
     // Constructors
     //
@@ -47,6 +48,7 @@ public final class ChatSession {
     //
     public void runChatSession() {
         startChatSession(Language.getTheLanguage().getLanguage());
+        startReceipt();
         connectChatters();
         chat();
         runQuiz();
@@ -169,9 +171,26 @@ public final class ChatSession {
         theStudent.sayGreeting(theStudent.getFirstName());
         thePlayer.sayGreeting(thePlayer.getGreetings(4));
 
+        //**********************RECEIPT*************************//
+        // Write receipt info where the transaction started
+        theReceipt.write(getTimerInfo() + "Transaction started.\n\n");
+        // Write receipt info who's in the transaction
+        theReceipt.write(thePlayer.getFirstName() + " " + thePlayer.getLastName());
+        theReceipt.write(", " + Player.getPlayerNumber()
+                + " | " + theClub.getClubName().toUpperCase() + "\n");
+        theReceipt.write(theStudent.getFirstName() + " " + theStudent.getLastName());
+        theReceipt.write(", " + theStudent.getTheirEmail()
+                + " | " + theUniversity.getUniversityName().toUpperCase() + "\n");
+        //**********************RECEIPT*************************//
+
         // Get how many cards: - Uses player greeting 5 and 6
         System.out.println();
         getHowManyCards();
+
+        //**********************RECEIPT*************************//
+        theReceipt.write(String.valueOf(Student.getTheCard().getCardCount()) + "\n");
+        theReceipt.write("-".repeat(70) + "\n");
+        //**********************RECEIPT*************************//
 
         // Get card info: - Uses player greeting 7 and 8
         // (In 3 lines please provide... get student input and make cards
@@ -216,6 +235,13 @@ public final class ChatSession {
                 // This is going to iterate through the cardArray in Card class based on which int i it's in
                 // This could also be an example of a Queue data structure where the first in the array is the first to go out(print)
                 // Fun!
+
+                //**********************RECEIPT*************************//
+                theReceipt.write(Student.getTheCard().getACard(i).getRecipientName() + "\n");
+                theReceipt.write(Student.getTheCard().getACard(i).getArtSymbol() + "\n");
+                theReceipt.write(Student.getTheCard().getACard(i).getMessageToRecipient() + "\n");
+                theReceipt.write("-".repeat(70) + "\n");
+                //**********************RECEIPT*************************//
             }
         }
         catch (Exception e){
@@ -271,11 +297,21 @@ public final class ChatSession {
             theQuiz.setTheAnswer(new QuestionAnswer(input.nextLine().toUpperCase(), "Ball Game"));
             // Outro
             System.out.println(theQuiz.getQuestionOutro());
+            //**********************RECEIPT*************************//
+            theReceipt.write("*** PASSED quiz. Got FREE TICKETS. ***\n\n");
         }
         catch (Exception ex){
             // If wrong
             System.out.println(QuestionAnswer.getIncorrectResponse1());
+            //**********************RECEIPT*************************//
+            theReceipt.write("*** FAILED quiz. Didn't get FREE TICKETS. ***\n\n");
         }
+
+        //**********************RECEIPT*************************//
+        theReceipt.write(getTimerInfo() + "Transaction ended.");
+        theReceipt.stopLog();
+        //**********************RECEIPT*************************//
+
         // Back to runChatSession()
     }
 
@@ -295,6 +331,11 @@ public final class ChatSession {
         Messenger.getConfig().getStdOutStdErrTee().stopLog();
     }
 
+    private void startReceipt(){
+        theReceipt = new Receipt(theStudent.getFirstName(), theStudent.getLastName(), theStudent.getTheirEmail());
+        theReceipt.startLog();
+        theReceipt.write(Config.getOfficialAppHeader() + "\n");
+    }
         // Private instance Methods
 
     //
@@ -330,6 +371,9 @@ public final class ChatSession {
     private static void displayTimerInformation(){
         // YYYY/MM/DD HH:MM:SS [MS] PM/AM TimeZone
         System.out.print(Timer.getDateFormat());
+    }
+    private static String getTimerInfo(){
+        return Timer.getDateFormat();
     }
     private void getHowManyCards(){
         Scanner theInput = new Scanner(System.in);
@@ -386,9 +430,6 @@ public final class ChatSession {
                     Student.getTheCard().getArtSymbol(), Student.getTheCard().getMessageToRecipient(), 12,
                     ""));
         }
-    }
-    private void displayChatSessionInformation(){
-        System.out.println();
     }
     //
     // Language

@@ -26,8 +26,8 @@ public class StdOutStdErrTee extends OutputStream {
     private String stdErrFilePath = Config.getDefaultStdErrFilePath();
     private OutputStream[] streamsToConsoleToFile = new OutputStream[2];
 
-    private PrintStream originalOut = System.out;
-    private PrintStream originalErr = System.err;
+    private final PrintStream originalOut = System.out;
+    private final PrintStream originalErr = System.err;
     //
     // Constructors
     //
@@ -72,10 +72,10 @@ public class StdOutStdErrTee extends OutputStream {
         System.setErr(originalErr);
     }
     public String getStdOutFilePath() {
-        return stdOutFilePath;
+        return Language.getTheLanguage().getLanguage() == "ENGLISH" ? stdOutFilePath : Language.getDefaultAlienSound();
     }
     public String getStdErrFilePath() {
-        return stdErrFilePath;
+        return Language.getTheLanguage().getLanguage() == "ENGLISH" ? stdErrFilePath : Language.getDefaultAlienSound();
     }
 
     //

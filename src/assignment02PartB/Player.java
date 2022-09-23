@@ -33,7 +33,7 @@ public final class Player extends Person {
     private String playerBats;
     private String playerThrows;
 
-    private int playerNumber;
+    private static int playerNumber;
     private int MLBDebut;
 
     private String busterGreeting1Part1, busterGreeting1Part2, busterGreeting2, busterGreeting3Part1,
@@ -191,7 +191,7 @@ public final class Player extends Person {
     public void setPlayerPosition(String playerPosition) {
         this.playerPosition = playerPosition;
     }
-    public int getPlayerNumber() {
+    public static int getPlayerNumber() {
         return playerNumber;
     }
     public void setPlayerNumber(int playerNumber) {

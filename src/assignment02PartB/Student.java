@@ -50,7 +50,8 @@ public final class Student extends Person {
         setStudentGreeting1("Welcome to my University!");
     }
     private void setStudentGreetingsAlien(){
-        setPersonHeader(super.getFirstName() + " " + super.getLastName() + ": ");
+        setPersonHeader(Color.ANSI_PURPLE_BACKGROUND+Color.ANSI_YELLOW+super.getFirstName() + super.getFirstName()
+                + " " + super.getLastName()+ Color.ANSI_RESET + ": ");
         setStudentGreeting1(studentLanguage);
     }
     //
