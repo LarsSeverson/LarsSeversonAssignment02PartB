@@ -396,8 +396,8 @@ public final class ChatSession {
             catch(InputMismatchException e){
                 // If not an int
                 theInput.nextLine();
+                System.err.println(e); // Print out e to System.err
                 System.out.println("Please enter an INTEGER " + count + " tries left.");
-                System.out.println(e);
                 count--; // Track how many tries
             }
         }
