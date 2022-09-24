@@ -5,7 +5,7 @@ package assignment02PartB;
  * CSC 220 -  Data Structures
  * File Name: Language.java
  * @author: Duc Ta
- * @author: <First Name> <Last Name>
+ * @author: Lars Severson
  * **********************************************
  */
 
@@ -75,83 +75,6 @@ public final class Language {
     //
     // Static Methods
     //
-    public static String getPhraseHeader() {
-        return phraseHeader;
-    }
-    public static void setPhraseHeader(String phraseHeader) {
-        Language.phraseHeader = phraseHeader;
-    }
-    public static String getLanguageHead() {
-        return languageHead;
-    }
-    public static void setLanguageHead(String languageHead) {
-        Language.languageHead = languageHead;
-    }
-    public static String getTimerHead() {
-        return timerHead;
-    }
-    public static void setTimerHead(String timerHead) {
-        Language.timerHead = timerHead;
-    }
-    public static String getColorHead() {
-        return colorHead;
-    }
-    public static void setColorHead(String colorHead) {
-        Language.colorHead = colorHead;
-    }
-    public static String getStandardOutputLogHead() {
-        return standardOutputLogHead;
-    }
-    public static void setStandardOutputLogHead(String standardOutputLogHead) {
-        Language.standardOutputLogHead = standardOutputLogHead;
-    }
-    public static String getStandardErrorLogHead() {
-        return standardErrorLogHead;
-    }
-    public static void setStandardErrorLogHead(String standardErrorLogHead) {
-        Language.standardErrorLogHead = standardErrorLogHead;
-    }
-    public static String getReceiptLogHead() {
-        return receiptLogHead;
-    }
-    public static void setReceiptLogHead(String receiptLogHead) {
-        Language.receiptLogHead = receiptLogHead;
-    }
-    public static String getDefaultUniversityHead() {
-        return defaultUniversityHead;
-    }
-    public static void setDefaultUniversityHead(String defaultUniversityHead) {
-        Language.defaultUniversityHead = defaultUniversityHead;
-    }
-    public static String getDefaultClubHead() {
-        return defaultClubHead;
-    }
-    public static void setDefaultClubHead(String defaultClubHead) {
-        Language.defaultClubHead = defaultClubHead;
-    }
-    public static String getDefaultAlienSound(){ return defaultAlienSound;}
-    public static String[] getPhrases() {
-        return phrases;
-    }
-    public static void setPhrases(String[] phrases) {
-        Language.phrases = phrases;
-    }
-    public static Language getTheLanguage() {
-        return theLanguage;
-    }
-    public static void setTheLanguage(Language theLanguage) {
-        Language.theLanguage = theLanguage;
-    }
-    public static void displayAppHeader(){
-        System.out.println(Config.getOfficialAppHeader());
-    }
-    public static String getReceiptLog() {
-        return receiptLog;
-    }
-    public static void setReceiptLog(String receiptLog) {
-        Language.receiptLog = receiptLog;
-    }
-
     public static Language setLanguagePreference(){
         Scanner input = new Scanner(System.in);
         boolean loop = true;
@@ -181,9 +104,46 @@ public final class Language {
     //
     // Additional Static Methods
     //
+    public static void setPhraseHeader(String phraseHeader) {
+        Language.phraseHeader = phraseHeader;
+    }
+    public static void setLanguageHead(String languageHead) {
+        Language.languageHead = languageHead;
+    }
+    public static void setTimerHead(String timerHead) {
+        Language.timerHead = timerHead;
+    }
+    public static void setColorHead(String colorHead) {
+        Language.colorHead = colorHead;
+    }
+    public static void setStandardOutputLogHead(String standardOutputLogHead) {
+        Language.standardOutputLogHead = standardOutputLogHead;
+    }
+    public static void setStandardErrorLogHead(String standardErrorLogHead) {
+        Language.standardErrorLogHead = standardErrorLogHead;
+    }
+    public static void setReceiptLogHead(String receiptLogHead) {
+        Language.receiptLogHead = receiptLogHead;
+    }
+    public static void setDefaultUniversityHead(String defaultUniversityHead) {
+        Language.defaultUniversityHead = defaultUniversityHead;
+    }
+    public static void setDefaultClubHead(String defaultClubHead) {
+        Language.defaultClubHead = defaultClubHead;
+    }
+    public static void displayAppHeader(){
+        System.out.println(Config.getOfficialAppHeader());
+    }
+    public static void setReceiptLog(String receiptLog) {
+        Language.receiptLog = receiptLog;
+    }
+    public static String getDefaultAlienSound(){ return defaultAlienSound;}
+    public static Language getTheLanguage() {
+        return theLanguage;
+    }
 
     //
-    // Additional Methods
+    // Instance Methods
     //
     public void populateAlienPhrases(){
         setPhraseHeader(getDefaultAlienSound());
@@ -206,7 +166,7 @@ public final class Language {
         setStandardOutputLogHead("Standard Output Log:");
         setStandardErrorLogHead("Standard Error Log:");
         setReceiptLogHead("Receipt Log:");
-        setReceiptLog("Receipt-*-*.log:");
+        setReceiptLog("Receipt-*-*.log");
         setDefaultUniversityHead("Default University:");
         setDefaultClubHead("Default Club:");
         this.LANGUAGE = Config.getDefaultLanguage();
@@ -223,14 +183,15 @@ public final class Language {
     public void populateYourLanguagePhrases(){
 
     }
+    //
+    // Additional Methods
+    //
     public String getConfigPhrase(int i) {
         return phrases[i];
     }
     public String getLanguage() {
         return theLanguage.LANGUAGE;
     }
-
-    // I disagree with having this method here. Very ambiguous
     public String getGreetingPhrase(int i) {
         return null;
     }

@@ -20,51 +20,40 @@ import java.util.Objects;
 
 public class QuestionAnswer {
     //
+    // Static Data Fields
+    //
+    private static boolean failed = false;
+    //
     // Instance Data Fields
     //
     private static String correctResponse;
     private static String incorrectResponse1;
-    private static String incorrectResponse2;
-
-    private static final int endOfQuestions = 6;
-    private static int count = 0;
 
     private boolean incorrect = false;
     //
     // Constructors
     //
-    public QuestionAnswer(String theAnswer, String correctAnswer) throws Exception{
-        String input;
-        input = theAnswer.toUpperCase();
-
-        // Add the count for future implementation
-        count++;
+    public QuestionAnswer(String theAnswer, String correctAnswer) {
 
         // Set responses
         switch (Language.getTheLanguage().getLanguage()){
             case "ENGLISH"-> {
                 correctResponse = Club.getShortName() + ": Correct!";
-                incorrectResponse1 = Club.getShortName() + ": ____ Please try again at your graduation ceremony. ____";
-                incorrectResponse2 = Club.getShortName() + ": Oops...";
+                incorrectResponse1 = Club.getShortName() + ": Oops...";
             }
             default -> {
-                correctResponse = Club.getShortName() + Language.getDefaultAlienSound();
+                correctResponse = Club.getShortName() + Language.getDefaultAlienSound().repeat(2);
                 incorrectResponse1 = correctResponse;
-                incorrectResponse2 = correctResponse;
-
             }
         }
 
         // Run check
-        questionAnswer(theAnswer, correctAnswer);
+        questionAnswer(theAnswer.toUpperCase(), correctAnswer);
 
         // Return check result
         if (incorrect){
-            if (Objects.equals(input, "MISSING") && count != endOfQuestions){
-                System.out.println(incorrectResponse2);
-                return;
-            }
-            throw new Exception(incorrectResponse1);
+            System.out.println((incorrectResponse1));
+            failed = true;
         }
         else{
             System.out.println(correctResponse);
@@ -87,6 +76,9 @@ public class QuestionAnswer {
     //
     public static String getIncorrectResponse1() {
         return incorrectResponse1;
+    }
+    public static boolean isFailed() {
+        return failed;
     }
     //
     // Language

@@ -23,6 +23,7 @@ import java.util.concurrent.TimeUnit;
  */
 
 public final class ChatSession {
+
     //
     // Instance Data Fields
     //
@@ -54,8 +55,8 @@ public final class ChatSession {
         runQuiz();
         stopChatSession();
     }
-        // Private Instance Methods
 
+        // Private Instance Methods
     private void startChatSession(String language) {
         displayTimerInformation();
         String start; // Chat session started.
@@ -269,42 +270,42 @@ public final class ChatSession {
         theQuiz = new Quiz(Language.getTheLanguage().getLanguage());
 
         // Run the Quiz
-        try{
-            // Question 1
-            theQuiz.askQuestion(club + theQuiz.getQuestions(0));
-            theQuiz.askQuestion(club + theQuiz.getQuestions(1));
-            theStudent.sayGreeting(studentInput);
-            theQuiz.setTheAnswer(new QuestionAnswer(input.nextLine().toUpperCase(), "abstract"));
-            // Question 2
-            theQuiz.askQuestion(club + theQuiz.getQuestions(2));
-            theStudent.sayGreeting(studentInput);
-            theQuiz.setTheAnswer(new QuestionAnswer(input.nextLine().toUpperCase(), "default"));
-            // Question 3
-            theQuiz.askQuestion(club + theQuiz.getQuestions(3));
-            theStudent.sayGreeting(studentInput);
-            theQuiz.setTheAnswer(new QuestionAnswer(input.nextLine().toUpperCase(), "yield"));
-            // Question 4
-            theQuiz.askQuestion(club + theQuiz.getQuestions(4));
-            theStudent.sayGreeting(studentInput);
-            theQuiz.setTheAnswer(new QuestionAnswer(input.nextLine().toUpperCase(), "permits"));
-            // Question 5
-            theQuiz.askQuestion(club + theQuiz.getQuestions(5));
-            theStudent.sayGreeting(studentInput);
-            theQuiz.setTheAnswer(new QuestionAnswer(input.nextLine().toUpperCase(), "Gigantes"));
-            // Question 6
-            theQuiz.askQuestion(club + theQuiz.getQuestions(6));
-            theStudent.sayGreeting(studentInput);
-            theQuiz.setTheAnswer(new QuestionAnswer(input.nextLine().toUpperCase(), "Ball Game"));
-            // Outro
+        // Question 1
+        theQuiz.askQuestion(club + theQuiz.getQuestions(0));
+        theQuiz.askQuestion(club + theQuiz.getQuestions(1));
+        theStudent.sayGreeting(studentInput);
+        theQuiz.setTheAnswer(new QuestionAnswer(input.nextLine().toUpperCase(), "abstract"));
+        // Question 2
+        theQuiz.askQuestion(club + theQuiz.getQuestions(2));
+        theStudent.sayGreeting(studentInput);
+        theQuiz.setTheAnswer(new QuestionAnswer(input.nextLine().toUpperCase(), "default"));
+        // Question 3
+        theQuiz.askQuestion(club + theQuiz.getQuestions(3));
+        theStudent.sayGreeting(studentInput);
+        theQuiz.setTheAnswer(new QuestionAnswer(input.nextLine().toUpperCase(), "yield"));
+        // Question 4
+        theQuiz.askQuestion(club + theQuiz.getQuestions(4));
+        theStudent.sayGreeting(studentInput);
+        theQuiz.setTheAnswer(new QuestionAnswer(input.nextLine().toUpperCase(), "permits"));
+        // Question 5
+        theQuiz.askQuestion(club + theQuiz.getQuestions(5));
+        theStudent.sayGreeting(studentInput);
+        theQuiz.setTheAnswer(new QuestionAnswer(input.nextLine().toUpperCase(), "Gigantes"));
+        // Question 6
+        theQuiz.askQuestion(club + theQuiz.getQuestions(6));
+        theStudent.sayGreeting(studentInput);
+        theQuiz.setTheAnswer(new QuestionAnswer(input.nextLine().toUpperCase(), "Ball Game"));
+        // Outro
+        if (QuestionAnswer.isFailed()){
+            System.out.println(theQuiz.getOutroFailed());
+            //**********************RECEIPT*************************//
+            theReceipt.write("*** FAILED quiz. Didn't get FREE TICKETS. ***\n\n");
+
+        }
+        else{
             System.out.println(theQuiz.getQuestionOutro());
             //**********************RECEIPT*************************//
             theReceipt.write("*** PASSED quiz. Got FREE TICKETS. ***\n\n");
-        }
-        catch (Exception ex){
-            // If wrong
-            System.out.println(QuestionAnswer.getIncorrectResponse1());
-            //**********************RECEIPT*************************//
-            theReceipt.write("*** FAILED quiz. Didn't get FREE TICKETS. ***\n\n");
         }
 
         //**********************RECEIPT*************************//
@@ -394,7 +395,7 @@ public final class ChatSession {
             }
             catch(InputMismatchException e){
                 // If not an int
-                theInput.next();
+                theInput.nextLine();
                 System.out.println("Please enter an INTEGER " + count + " tries left.");
                 System.out.println(e);
                 count--; // Track how many tries

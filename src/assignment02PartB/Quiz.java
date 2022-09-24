@@ -20,6 +20,7 @@ public final class Quiz {
     // Instance Data Fields
     //
     private String questionOutro;
+    private String outroFailed;
     private String questionIntro;
     private String question1;
     private String question2;
@@ -61,6 +62,7 @@ public final class Quiz {
         setQuestion5("Giants in Spanish?");
         setQuestion6("Take me out to the...?");
         setQuestionOutro("*** Congrats! You won FREE TICKETS to SF GIANTS Games ***");
+        setOutroFailed("____ Please try again at your graduation ceremony. ____");
     }
     public void populateAlienQuestions(){
         String alien = Language.getTheLanguage().getLanguage();
@@ -72,6 +74,7 @@ public final class Quiz {
         setQuestion5(alien + alien);
         setQuestion6(alien + alien);
         setQuestionOutro(alien);
+        setOutroFailed(alien);
     }
     //
     // Additional Instance Methods
@@ -106,8 +109,14 @@ public final class Quiz {
     public String getQuestionOutro() {
         return questionOutro;
     }
+    public String getOutroFailed() {
+        return outroFailed;
+    }
     public void setTheAnswer(QuestionAnswer theAnswer) {
         this.theAnswer = theAnswer;
+    }
+    public void setOutroFailed(String outroFailed) {
+        this.outroFailed = outroFailed;
     }
     //
     // Language

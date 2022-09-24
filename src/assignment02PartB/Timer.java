@@ -22,7 +22,7 @@ public class Timer {
     private static Timer theTime = null;
     private static String timeAbbreviation;
     private static final List<String> timeZoneList = new ArrayList<>(Arrays.asList("pst", "est", "cst"));
-    private static SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss '['SSSS 'ms]' a z ' - ' ");
+    private static DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss '['SSSS 'ms]' a z ' - ' ");
     //
     // Instance Data Fields
     //
@@ -61,7 +61,7 @@ public class Timer {
             timerInput = Language.getDefaultAlienSound();
         }
         else{
-            timerInput = "Timer: ";
+            timerInput = "Time Zone: ";
         }
 
         while(loop){
@@ -74,7 +74,7 @@ public class Timer {
                     loop = false;
                 }
                 case "EST"-> {
-                    timeAbbreviation = s;
+                    timeAbbreviation = "America/New_York";
                     theTime = new Timer("Eastern Standard Time in Day Light Saving");
                     loop = false;
                 }
