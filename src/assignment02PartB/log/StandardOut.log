@@ -1,0 +1,168 @@
+----------------------------------------------------------------------
+---------------------- SF GIANTS THANK YOU ---------------------------
+----------------------------------------------------------------------
+                                             powered by CSC 220 @ SFSU 
+Language: Time Zone: ----------------------------------------------------------------------
+Language:                 ENGLISH                                            
+Time Zone:                Pacific Standard Time in Day Light Saving          
+Color Sequences:          ANSI                                               
+Standard Output Log:      ./src/assignment02PartB/log/StandardOut.log        
+Standard Error Log:       ./src/assignment02PartB/log/StandardErr.log        
+Receipt Log:              ./src/assignment02PartB/log/Receipt-*-*.log        
+Default University:       San Francisco State University                     
+Default Club:             San Francisco Giants                               
+----------------------------------------------------------------------
+2022/09/23 05:14:21 [0231 ms] PM PDT  -  Chat session started.
+
+SF Giants: Welcome to the SAN FRANCISCO GIANTS!
+----------------------------------------------------------------------
+Club:                     San Francisco Giants                               
+Short Name:               SF Giants                                          
+Established in:           1883                                               
+Colors:                   Orange, Black, Gold, Cream                         
+Ballpark:                 Oracle Park                                        
+World Series Titles:      8                                                  
+NL Pennants:              23                                                 
+Division Titles:          8                                                  
+Wild Card Berths:         3                                                  
+Owners:                   San Francisco Baseball Associates LLC              
+President:                Farhan Zaidi                                       
+General Manager:          Scott Harris                                       
+Manager:                  Gabe Kapler                                        
+----------------------------------------------------------------------
+SF Giants: Your first name and last name, please: SF Giants: Your school email address, please: [45m[33mLars Severson[0m: Welcome to my University!
+----------------------------------------------------------------------
+Official name:            San Francisco State University                     
+Motto in Latin:           Experientia Docet                                  
+Motto in English          Experience Teaches                                 
+Type:                     Public                                             
+Year of Establishment:    1899                                               
+Location:                 San Francisco, California, United States           
+Address:                  1600 Holloway Avenue, San Francisco, CA 94132      
+Colors                    Purple, Gold                                       
+Nickname:                 Gators                                             
+Mascot:                   Gator                                              
+Website:                  www.sfsu.edu                                       
+----------------------------------------------------------------------
+SF Giants: Thank you. We are connecting you with our player...
+. . . . . 
+----------------------------------------------------------------------
+Player:                   Buster Posey                                       
+Club:                     San Francisco Giants                               
+Position:                 Catcher                                            
+Number:                   28                                                 
+Bats:                     Right                                              
+Throws                    Right                                              
+MLB Debut:                2009                                               
+----------------------------------------------------------------------
+. . . . . 
+Buster Posey, 28: Hello Lars. C-O-N-G-R-A-T-U-L-A-T-I-O-N-S!
+Buster Posey, 28: [45m[33mSAN FRANCISCO STATE UNIVERSITY[0m. Way to go!
+[45m[33mLars Severson[0m: Buster Posey, 28: Likewise, Lars. Very nice chatting w/ you.
+Buster Posey, 28: How many SF Giants Thank You cards would you like to order?
+[45m[33mLars Severson[0m: Please enter an INTEGER 3 tries left.
+java.util.InputMismatchException
+Buster Posey, 28: How many SF Giants Thank You cards would you like to order?
+[45m[33mLars Severson[0m: Please enter an INTEGER 2 tries left.
+java.util.InputMismatchException
+Buster Posey, 28: How many SF Giants Thank You cards would you like to order?
+[45m[33mLars Severson[0m: Please enter an INTEGER 1 tries left.
+java.util.InputMismatchException
+Buster Posey, 28: How many SF Giants Thank You cards would you like to order?
+[45m[33mLars Severson[0m: Buster Posey, 28: In 3 lines, please provide
+	[1] Recipient name
+	[2] Art symbol (a character)
+	[3] Message to recipient
+Buster Posey, 28: Card #1:
+[45m[33mLars Severson[0m:  [1] [45m[33mLars Severson[0m:  [2] [45m[33mLars Severson[0m:  [3] Buster Posey, 28: Card #2:
+[45m[33mLars Severson[0m:  [1] [45m[33mLars Severson[0m:  [2] [45m[33mLars Severson[0m:  [3] Buster Posey, 28: Card #3:
+[45m[33mLars Severson[0m:  [1] [45m[33mLars Severson[0m:  [2] [45m[33mLars Severson[0m:  [3] Buster Posey, 28: Thanks, Lars. Please confirm your order:
+SF GIANTS - - - - SF GIANTS - - - - SF GIANTS - - - - SF GIANTS - - - - SF GIANTS - - - - SF    
+SF                                                                                        SF       
+SF       @@@@@@ @@                   @@                                       @@@@        SF       
+SF         @@   @@                   @@                                    @ @@  @@       SF       
+SF         @@   @@ @@   @@@@  @@ @@  @@  @@   @@   @@ @@@@  @@  @@       @@@     @@       SF       
+SF         @@   @@@ @@ @   @@ @@@ @@ @@ @@    @@   @@@@  @@ @@  @@     @@@     @@@        SF       
+SF         @@   @@  @@   @@@@ @@  @@ @@@@      @@ @@ @@  @@ @@  @@    @@         @@       SF       
+SF         @@   @@  @@  @@ @@ @@  @@ @@@@@     @@ @@ @@  @@ @@  @@     @@@       @@       SF       
+SF         @@   @@  @@ @@  @@ @@  @@ @@ @@     @@ @@ @@  @@ @@  @@       @@@     @@       SF       
+SF         @@   @@  @@ @@  @@ @@  @@ @@  @@     @@@  @@  @@ @@ @@@         @ @@  @@       SF       
+SF         @@   @@  @@  @@@@@ @@  @@ @@  @@     @@@   @@@@   @@ @@            @@@@        SF       
+SF                                              @@                                        SF       
+SF                                            @@@                                         SF       
+SF                                                                                        SF       
+SF GIANTS - - - - SF GIANTS - - - - SF GIANTS - - - - SF GIANTS - - - - SF GIANTS - - - - SF    
+SF                                                                                        SF       
+SF       Mom,                                                                             SF    
+SF             Thank you very much, Mom!                                                  SF    
+SF       Love,                                                                            SF    
+SF       Lars                                                                             SF    
+SF                                                                                        SF       
+SF                               lseverson@mail.sfsu.edu / Take me out to the ball game   SF    
+SF GIANTS - - - - SF GIANTS - - - - SF GIANTS - - - - SF GIANTS - - - - SF GIANTS - - - - SF    
+
+SF GIANTS - - - - SF GIANTS - - - - SF GIANTS - - - - SF GIANTS - - - - SF GIANTS - - - - SF    
+SF                                                                                        SF       
+SF       ###### ##                   ##                                       ####        SF       
+SF         ##   ##                   ##                                    # ##  ##       SF       
+SF         ##   ## ##   ####  ## ##  ##  ##   ##   ## ####  ##  ##       ###     ##       SF       
+SF         ##   ### ## #   ## ### ## ## ##    ##   ####  ## ##  ##     ###     ###        SF       
+SF         ##   ##  ##   #### ##  ## ####      ## ## ##  ## ##  ##    ##         ##       SF       
+SF         ##   ##  ##  ## ## ##  ## #####     ## ## ##  ## ##  ##     ###       ##       SF       
+SF         ##   ##  ## ##  ## ##  ## ## ##     ## ## ##  ## ##  ##       ###     ##       SF       
+SF         ##   ##  ## ##  ## ##  ## ##  ##     ###  ##  ## ## ###         # ##  ##       SF       
+SF         ##   ##  ##  ##### ##  ## ##  ##     ###   ####   ## ##            ####        SF       
+SF                                              ##                                        SF       
+SF                                            ###                                         SF       
+SF                                                                                        SF       
+SF GIANTS - - - - SF GIANTS - - - - SF GIANTS - - - - SF GIANTS - - - - SF GIANTS - - - - SF    
+SF                                                                                        SF       
+SF       Dad,                                                                             SF    
+SF             Thank you, Dad!                                                            SF    
+SF       Love,                                                                            SF    
+SF       Lars                                                                             SF    
+SF                                                                                        SF       
+SF                               lseverson@mail.sfsu.edu / Take me out to the ball game   SF    
+SF GIANTS - - - - SF GIANTS - - - - SF GIANTS - - - - SF GIANTS - - - - SF GIANTS - - - - SF    
+
+SF GIANTS - - - - SF GIANTS - - - - SF GIANTS - - - - SF GIANTS - - - - SF GIANTS - - - - SF    
+SF                                                                                        SF       
+SF       $$$$$$ $$                   $$                                       $$$$        SF       
+SF         $$   $$                   $$                                    $ $$  $$       SF       
+SF         $$   $$ $$   $$$$  $$ $$  $$  $$   $$   $$ $$$$  $$  $$       $$$     $$       SF       
+SF         $$   $$$ $$ $   $$ $$$ $$ $$ $$    $$   $$$$  $$ $$  $$     $$$     $$$        SF       
+SF         $$   $$  $$   $$$$ $$  $$ $$$$      $$ $$ $$  $$ $$  $$    $$         $$       SF       
+SF         $$   $$  $$  $$ $$ $$  $$ $$$$$     $$ $$ $$  $$ $$  $$     $$$       $$       SF       
+SF         $$   $$  $$ $$  $$ $$  $$ $$ $$     $$ $$ $$  $$ $$  $$       $$$     $$       SF       
+SF         $$   $$  $$ $$  $$ $$  $$ $$  $$     $$$  $$  $$ $$ $$$         $ $$  $$       SF       
+SF         $$   $$  $$  $$$$$ $$  $$ $$  $$     $$$   $$$$   $$ $$            $$$$        SF       
+SF                                              $$                                        SF       
+SF                                            $$$                                         SF       
+SF                                                                                        SF       
+SF GIANTS - - - - SF GIANTS - - - - SF GIANTS - - - - SF GIANTS - - - - SF GIANTS - - - - SF    
+SF                                                                                        SF       
+SF       Friends,                                                                         SF    
+SF             Yahoooo!                                                                   SF    
+SF       Love,                                                                            SF    
+SF       Lars                                                                             SF    
+SF                                                                                        SF       
+SF                               lseverson@mail.sfsu.edu / Take me out to the ball game   SF    
+SF GIANTS - - - - SF GIANTS - - - - SF GIANTS - - - - SF GIANTS - - - - SF GIANTS - - - - SF    
+
+[45m[33mLars Severson[0m: Buster Posey, 28: Thank you again, Lars. See you at your graduation ceremony!
+
+SF Giants: *** FREE TICKETS to SF GIANTS Games *** _ 1 miss allowed _
+SF Giants: Which type of class has 'protected' constructors?
+[45m[33mLars Severson[0m: SF Giants: Correct!
+SF Giants: What type of method did Java 8 add to 'interface'?
+[45m[33mLars Severson[0m: SF Giants: Correct!
+SF Giants: What new keyword did Java 13 add to 'switch' statement?
+[45m[33mLars Severson[0m: SF Giants: Correct!
+SF Giants: In Java 15, what keyword pairs with 'sealed'?
+[45m[33mLars Severson[0m: SF Giants: Correct!
+SF Giants: Giants in Spanish?
+[45m[33mLars Severson[0m: SF Giants: Correct!
+SF Giants: Take me out to the...?
+[45m[33mLars Severson[0m: SF Giants: Correct!
+*** Congrats! You won FREE TICKETS to SF GIANTS Games ***
+2022/09/23 05:16:59 [0344 ms] PM PDT  -  Chat session ended.
